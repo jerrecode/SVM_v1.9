@@ -1,0 +1,29 @@
+
+\subsection*{Operator Definition}
+
+Let $f(\Delta E_n(x)) := \alpha \, \nabla^2 \Delta E_n(x)$ with $\alpha$ a dimensionless scaling factor.
+
+The temporal layer transition becomes:
+\begin{equation*}
+S_{n+1}(x) = S_n(x) + \alpha \nabla^2 \Delta E_n(x)
+\end{equation*}
+
+Where $\nabla^2$ introduces spatial locality and diffusion-like behavior. If $[\Delta E] = \mathrm{J/m^3}$, then:
+
+\begin{equation*}
+[f(\Delta E)] = \mathrm{J/m^5}
+\quad \Rightarrow \quad [S_{n+1}] = [S_n] + \mathrm{J/m^5}
+\end{equation*}
+
+\subsection*{Symbol Analysis}
+
+\begin{tabular}{|c|l|l|c|}
+\hline
+Symbol & Meaning & Unit/Type & Consistent? \\
+\hline
+$S_n$ & State per temporal layer & Energy distribution & Yes \\
+$\pi_n$ & Transition momentum & Energy per layer & Yes \\
+$T_n$ & Temperature in layer & [K] & Yes \\
+$Q_n$ & Heat transfer & [J] & Yes \\
+\hline
+\end{tabular}

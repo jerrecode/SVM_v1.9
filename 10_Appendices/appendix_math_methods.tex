@@ -1,0 +1,45 @@
+
+\appendix
+\section{Appendix: Mathematical and Computational Details}
+
+\subsection*{A.1 Discrete Action Derivation}
+
+We start from the discrete action:
+\begin{equation*}
+A = \sum_n \left[ \frac{1}{2} (\partial_n S)^2 - V(S_n) \right]
+\end{equation*}
+
+Applying the discrete Euler-Lagrange principle:
+\begin{equation*}
+\frac{\partial L}{\partial S_n} - \Delta \left( \frac{\partial L}{\partial (\Delta S_n)} \right) = 0
+\end{equation*}
+
+Leads to:
+\begin{equation*}
+S_{n+1} - 2S_n + S_{n-1} = - \frac{\partial V}{\partial S_n}
+\end{equation*}
+
+\subsection*{A.2 Numerical Integration Scheme}
+
+To simulate energy and entropy dispersion across layers:
+\begin{itemize}
+  \item Discretize spatial domain using $x_i = i \Delta x$
+  \item Time evolution: $S_{n+1}(x_i) = S_n(x_i) + f(\Delta E_n(x_i))$
+  \item Use centered finite differences for $\nabla^2$:
+\begin{equation*}
+\nabla^2 E_n(x_i) \approx \frac{E_n(x_{i+1}) - 2E_n(x_i) + E_n(x_{i-1})}{\Delta x^2}
+\end{equation*}
+\end{itemize}
+
+\subsection*{A.3 Thermodynamic Relations}
+
+Recall:
+\begin{align*}
+Q_n &= c_v T_n \\
+F(S_n) &= S_n T_n \\
+g_{ab} &= \partial_a \partial_b F(S_n) \\
+\Delta S_n &= \frac{\Delta Q_n}{T_n} + \sigma_n \geq 0
+\end{align*}
+
+This structure forms a thermal-geometric space where entropy, temperature, and curvature are co-evolving.
+
